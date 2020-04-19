@@ -26,10 +26,20 @@ func (p Person) Age() int {
 	return ActualYear - p.YearOfBirth
 }
 
+func (p *Person) changeBirthYear() {
+	p.YearOfBirth = 2000
+	fmt.Println(p.YearOfBirth)
+}
+
+func name(p *Person) string {
+	return p.First
+}
+
 func main() {
 	fethi := Person{"Fethi", "TChi", 1991}
-
-	fmt.Println("Hello Fethi, your Age is:", fethi.Age())
+	fethi.changeBirthYear()
+	fmt.Println("Hello Fethi, your Age is:", fethi.YearOfBirth)
+	fmt.Println(name(&fethi))
 }
 
 /*
