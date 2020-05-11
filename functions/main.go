@@ -51,6 +51,6 @@ func main() {
 	//using returnFuncFromFunc function
 	//using closure
 	integer := returnFuncFromFunc(5)
-	fmt.Println(integer()) //21
-	fmt.Println(integer()) //22
+	fmt.Println(integer()) //6
+	fmt.Println(integer()) //7
 }
