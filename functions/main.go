@@ -22,6 +22,16 @@ func twoReturn(x, y int64) (xx int64, yy int64) {
 	yy = y * 2
 	return
 }
+
+//function can return function type
+//Closure
+func returnFuncFromFunc(x int) func() int {
+	return func() int {
+		x++
+		return x
+	}
+}
+
 func main() {
 	DoSomething()
 
@@ -32,4 +42,15 @@ func main() {
 
 	val1, val2 := twoReturn(20, 55)
 	fmt.Println(val1, val2)
+
+	//Anonymous function implementation
+	func(s string) {
+		fmt.Printf("Hello %v from anonymous func\n", s)
+	}("Yakoub")
+
+	//using returnFuncFromFunc function
+	//using closure
+	integer := returnFuncFromFunc(5)
+	fmt.Println(integer()) //21
+	fmt.Println(integer()) //22
 }
